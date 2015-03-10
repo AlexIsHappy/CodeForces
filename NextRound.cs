@@ -26,8 +26,7 @@ namespace ConsoleApplication2
                 else
                     Console.WriteLine(words[i][0] + (words[i].Length - 2).ToString() + words[i][words.Length -1]);
             }
-
-                Console.ReadLine();
+               
         }
     }
 }
