@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,30 +10,39 @@ namespace ConsoleApplication14
     {
         static void Main(string[] args)
         {
-            int[] numbers = Console.ReadLine().Split('+').Select(int.Parse).ToArray();
+            int numb = int.Parse(Console.ReadLine());
 
+            List<string> cola = new List<string>();
+            cola.Add("Sheldon");
+            cola.Add("Leonard");
+            cola.Add("Penny");
+            cola.Add("Rajesh");
+            cola.Add("Howard");
 
-            int n = numbers.Length;
+            int i = 0;
+            int count = 0;
 
-            for (int i = 1; i < n; i++)
+            while (count < numb)
             {
-                for (int j = i; j > 0 && numbers[j] < numbers[j - 1]; j--)
+                if (i < 5)
                 {
-                    int temp = numbers[j - 1];
-                    numbers[j - 1] = numbers[j];
-                    numbers[j] = temp;
+                    cola.Add(cola[i]);
+                    cola.Add(cola[i]);
+                    cola.RemoveAt(0);
+                    i++;
+                } 
+                else
+                {
+                    i = 0;
                 }
+
+                count++;
             }
 
-                for (int i = 0; i < numbers.Length; i++)
-                {
-                    if (i != numbers.Length - 1)
-                        Console.Write(numbers[i] + "+");
-                    else
-                        Console.WriteLine(numbers[i]);
-                }
-
-                Console.ReadLine();
+            
+            Console.WriteLine(cola[0]);
+            Console.ReadLine();
+                //Console.WriteLine(cola[numb - 1]);
 
         }
     }
