@@ -10,15 +10,16 @@ namespace ConsoleApplication19
         static void Main(string[] args)
         {
             var init = int.Parse(Console.ReadLine());
-            var num = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+            int count = 0;
 
-            num.Sort();
+            List<string> time = new List<string>();
 
-            foreach (int n in num)
+            for (int i = 0; i < init; i++)
             {
-                Console.Write(n + " ");
+                time.Add(string.Concat(Console.ReadLine().Split(' ')));
             }
-                Console.ReadLine();
+
+            Console.Write(init - time.Distinct().Count());
         }
     }
 }
